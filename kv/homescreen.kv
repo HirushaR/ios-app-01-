@@ -1,6 +1,67 @@
+#:import utils kivy.utils
 <HomeScreen>
-    Button:
-        text:
-            "You are at the home screen"
-        on_release:
-            app.change_screen("settings_screen")
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#39B3F2")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            rows:1
+            pos_hint:{"top":1, "left":1}
+            size_hint:1,.1
+            Image:
+                source: "icons/sun_PNG13449.png"
+            Image:
+                source: "icons/sun_PNG13449.png"
+                 #put weather icons here
+
+
+        GridLayout:
+            rows:1
+            pos_hint:{"top":.9, "left":1}
+            size_hint:1,.2
+            Image:
+                source:"icons/btw-sunset.png"
+            Image:
+                source:"icons/avatar-2.png"
+            Image:
+                source:"icons/late-night.png"
+            #put two weather icons and avatar icon
+
+        Label:
+               #streak label
+            pos_hint:{"top":.7, "left":1}
+            size_hint:1,.1
+            text:"12 Day streak"
+            id: streak_label
+
+        GridLayout:
+               #banner grid
+            cols:1
+            pos_hint:{"top":.6, "left":1}
+            size_hint:1,.4
+        GridLayout:
+         #add 3 menu buttons here
+            rows:1
+            pos_hint:{"top":.2, "left":1}
+            size_hint:1,.2
+            ImageButton:
+                source: "icons/the_world.png"
+                on_release:
+                    print("release add friend button")
+            ImageButton:
+                source: "icons/cycle.png"
+                on_release:
+                    print("release Cycle button")
+            ImageButton:
+                source: "icons/tools.png"
+                on_press:
+                    self.source= "icons/thumb.png"
+                on_release:
+                    self.source= "icons/tools.png"
+                    print("release tool button")
+
+
+
