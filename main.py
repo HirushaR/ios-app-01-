@@ -41,9 +41,11 @@ class MainApp(App):
         banner_grid = self.root.ids['home_screen'].ids['banner_grid']
         workouts = data['workouts'][1:]
         for workout in workouts:
-            # populate workout grid in home screen
-            Work = WorkoutBanner(workout_image=workout['workout_image'], description=workout['description'])
-            banner_grid.add_widget(Work)
+            for i in range(5):
+                # populate workout grid in home screen
+                Work = WorkoutBanner(workout_image=workout['workout_image'], description=workout['description'],
+                                     type_image=workout['type_image'], number=workout['number'], units=workout['units'], likes=workout['likes'])
+                banner_grid.add_widget(Work)
 
 
 

@@ -38,14 +38,21 @@
             text:"12 Day streak"
             id: streak_label
 
-        GridLayout:
-               #banner grid
-            id: banner_grid
-            cols:1
+        ScrollView:
             pos_hint:{"top":.6, "left":1}
             size_hint:1,.4
+            GridLayout:
+                #banner grid
+                id: banner_grid
+                cols:1
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height:'100dp'
+                row_force_default:True
+
         GridLayout:
-         #add 3 menu buttons here
+              #add 3 menu buttons here
             rows:1
             pos_hint:{"top":.2, "left":1}
             size_hint:1,.2
