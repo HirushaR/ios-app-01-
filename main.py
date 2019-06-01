@@ -31,7 +31,7 @@ class MainApp(App):
         data = json.loads(result.content.decode())
 
         # Get and update avatar image
-        avatar_image = self.root.ids['home_screen'].ids['avatar_image']
+        avatar_image = self.root.ids['avatar_image']
         avatar_image.source = "icons/"+ data['avatar']
 
         # Get and update streak label

@@ -4,11 +4,38 @@
 
 GridLayout:
     cols:1
-    ScreenManager:
-        id: screen_manager
-        HomeScreen:
-            name:"home_screen"
-            id: home_screen
-        SettingScreen:
-            name:"settings_screen"
-            id:setting_screen
+    FloatLayout:
+        GridLayout:
+            rows:1
+            pos_hint:{"top":1, "left":1}
+            size_hint:1,.05
+            Image:
+                source: "icons/sun_PNG13449.png"
+            Image:
+                source: "icons/sun_PNG13449.png"
+                 #put weather icons here
+
+
+        GridLayout:
+            rows:1
+            pos_hint:{"top":.95, "left":1}
+            size_hint:1,.15
+            Image:
+                source:"icons/btw-sunset.png"
+            Image:
+                source:"icons/avatar-2.png"
+                id:avatar_image
+            Image:
+                source:"icons/late-night.png"
+            #put two weather icons and avatar icon
+
+        ScreenManager:
+            size_hint: 1,0.8
+            pos_hint: {"top":.799, "left":1 }
+            id: screen_manager
+            HomeScreen:
+                name:"home_screen"
+                id: home_screen
+            SettingScreen:
+                name:"settings_screen"
+                id:setting_screen
